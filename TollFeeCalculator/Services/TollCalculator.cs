@@ -1,6 +1,7 @@
 ﻿using TollFeeCalculator;
+using TollFeeCalculator.Services;
 
-public class TollCalculator
+public class TollCalculator : ITollCalculator
 {
     private const int MaxFeeInSek = 60;
     
@@ -125,7 +126,7 @@ public class TollCalculator
     /// Checks if a given date is a toll-free date.
     /// Toll-free dates include Saturdays, Sundays, public holidays
     /// </summary>
-    /// <param name="date"></param>
+    /// <param name="date">DateTime to be validated</param>
     /// <returns></returns>
     public bool IsTollFreeDate(DateTime date)
     { 
