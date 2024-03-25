@@ -1,7 +1,8 @@
-﻿using TollFeeCalculator;
-using TollFeeCalculator.Services;
+﻿using TollFeeCalculator.Abstract;
 
-public class TollCalculator : ITollCalculator
+namespace TollFeeCalculator.Services;
+
+public class TollCalculatorV2 : ITollCalculator
 {
     private const int MaxFeeInSek = 60;
     
@@ -11,7 +12,7 @@ public class TollCalculator : ITollCalculator
     /// <param name="vehicle">the vehicle</param>
     /// <param name="dates">date and time of all passes on one day</param>
     /// <returns>the total toll fee for that day</returns>
-    public int GetTollFeeForOneDay(IVehicle vehicle, IReadOnlyCollection<DateTime> dates)
+    public int GetTollFeeForOneDay(Vehicle vehicle, IReadOnlyCollection<DateTime> dates)
     {
         return IsTollFreeVehicle(vehicle) 
             ? 0 

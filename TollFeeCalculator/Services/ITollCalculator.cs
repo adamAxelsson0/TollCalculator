@@ -1,6 +1,8 @@
-﻿namespace TollFeeCalculator.Services;
+﻿using TollFeeCalculator.Abstract;
+
+namespace TollFeeCalculator.Services;
 
 public interface ITollCalculator
 {
-    public int GetTollFeeForOneDay(IVehicle vehicle, IReadOnlyCollection<DateTime> dates);
+    public int GetTollFeeForOneDay(Vehicle vehicle, IReadOnlyCollection<DateTime> dates);
 }

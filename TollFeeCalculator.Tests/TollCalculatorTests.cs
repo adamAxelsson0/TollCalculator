@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using TollFeeCalculator.Services;
+using Xunit;
 
 namespace TollFeeCalculator.Tests;
 
@@ -14,7 +15,7 @@ public class TollCalculatorTests
         string secondPass, int tollFee)
     {
         //Arrange
-        var sut = new TollCalculator();
+        var sut = new TollCalculatorV2();
         var vehicle = new Car();
         var passes = new[] { DateTime.Parse(firstPass), DateTime.Parse(secondPass) };
         
@@ -35,7 +36,7 @@ public class TollCalculatorTests
         string secondPass, string thirdPass, int tollFee)
     {
         //Arrange
-        var sut = new TollCalculator();
+        var sut = new TollCalculatorV2();
         var vehicle = new Car();
         var passes = new[] { DateTime.Parse(firstPass), DateTime.Parse(secondPass), 
             DateTime.Parse(thirdPass)};
@@ -56,7 +57,7 @@ public class TollCalculatorTests
     public void IsTollFreeDay_Holiday_IsTullFree(DateTime dateTime)
     {
         //Arrange
-        var sut = new TollCalculator();
+        var sut = new TollCalculatorV2();
         
         //Act
         var result = sut.IsTollFreeDate(dateTime);
@@ -73,7 +74,7 @@ public class TollCalculatorTests
     public void IsTollFreeDay_NonHoliday_IsNotTullFree(DateTime dateTime)
     {
         //Arrange
-        var sut = new TollCalculator();
+        var sut = new TollCalculatorV2();
         
         //Act
         var result = sut.IsTollFreeDate(dateTime);
@@ -86,7 +87,7 @@ public class TollCalculatorTests
     public void IsTollFreeVehicle_AMotorBike_IsTullFree()
     {
         //Arrange
-        var sut = new TollCalculator();
+        var sut = new TollCalculatorV2();
         var vehicle = new Motorbike();
         
         //Act
@@ -100,7 +101,7 @@ public class TollCalculatorTests
     public void IsTollFreeVehicle_ACar_IsNotTullFree()
     {
         //Arrange
-        var sut = new TollCalculator();
+        var sut = new TollCalculatorV2();
         var vehicle = new Car();
         
         //Act
