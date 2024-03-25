@@ -1,10 +1,9 @@
-﻿namespace TollFeeCalculator
+﻿namespace TollFeeCalculator;
+
+public interface IVehicle
 {
-    public interface IVehicle
-    {
-        VehicleType VehicleType { get; }
+    VehicleType VehicleType { get; }
         
-        [Obsolete("Fetch VehicleType property instead")]
-        string GetVehicleType();
-    }
+    [Obsolete("Fetch VehicleType property instead")]
+    string GetVehicleType();
 }

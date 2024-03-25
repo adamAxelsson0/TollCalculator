@@ -1,13 +1,12 @@
-﻿namespace TollFeeCalculator
+﻿using TollFeeCalculator.Abstract;
+
+namespace TollFeeCalculator;
+
+public class Car() : Vehicle(VehicleType.Car)
 {
-    public class Car : IVehicle
+    [Obsolete("Fetch VehicleType property instead")]
+    public override string GetVehicleType()
     {
-        public VehicleType VehicleType => VehicleType.Car;
-        
-        [Obsolete("Fetch VehicleType property instead")]
-        public string GetVehicleType()
-        {
-            return VehicleType.ToString();
-        }
+        return VehicleType.ToString();
     }
 }
